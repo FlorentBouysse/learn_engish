@@ -33,15 +33,15 @@ const play = {
      */
     suggestWord: function () {
         let suggestWord = document.querySelector('.recovers__word');
-        suggestWord.textContent = play.generateRandomWord(); 
-    
-        play.validateAnswer();
-        // for (const key in english) {
-            
-        // }
+        const generateWord = play.generateRandomWord();
+        suggestWord.textContent = generateWord; 
+        play.validateAnswer(generateWord);
     },
 
-
+    /**
+     * Generate random key of object "english"
+     * @returns key of object "english"
+     */
     generateRandomWord: function () {
         const keys      = Object.keys(english);
         const randomKey = keys[Math.floor(Math.random()  * keys.length)];
@@ -61,9 +61,11 @@ const play = {
      */
     checkAnswer: function (event) {
         event.preventDefault();
+        
+        let answerOfUser = document.querySelector('input').value;
+        const keyObject = play.searchKeyInObject();
 
-        let answerOfUser        = document.querySelector('input').value;
-        if (answerOfUser === english.good[0]) {
+        if (answerOfUser === keyObject[0]) {
             play.goodAnswer();
         } else {
             play.badAnswer();
@@ -72,6 +74,18 @@ const play = {
         play.createElementAnswer();
     },
 
+
+    searchKeyInObject: function () {
+        const word = document.querySelector('h3.recovers__word').textContent;
+    
+        for (const key in english) {
+            if (key == word) {
+             
+                const result = english[key];
+                return result;
+            }
+        }
+    },
 
     /**
      * Create elements html for display answer with translate, definition and example
