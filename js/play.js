@@ -106,7 +106,7 @@ const play = {
         const keyArray = play.searchKeyInObject();
         console.log(keyArray);
 
-        answer.textContent              = Object.keys(english) + " => " + keyArray[0];
+        answer.textContent              = Object.keys(english)[0] + " => " + keyArray[0];
         answerDefinition.textContent    = keyArray[1];
         answerExample.textContent       = keyArray[2]; 
 
@@ -118,13 +118,13 @@ const play = {
 
     
     goodAnswer: function () {
-        let answer = document.querySelector('article.answer__article');
+        let answer = document.querySelector('.answer__article');
         answer.style.backgroundColor = 'green';
     },
 
 
     badAnswer: function () {
-        let answer = document.querySelector('article.answer__article');
+        let answer = document.querySelector('.answer__article');
         answer.style.backgroundColor = 'red';
     }
 }

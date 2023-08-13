@@ -22,10 +22,10 @@
                 
             </div>
             <section class="container__answer">
-                <article class="answer__article">
+                <!-- <article class="answer__article">
                     <h3 class="answer__title"></h3>
                     <p class="answer__definition"></p>
-                    <p class="answer__example"></p>
+                    <p class="answer__example"></p> -->
 
                 </article>
             </section>
@@ -34,6 +34,7 @@
             DevCode@2023
         </footer>
     </div>
+
 
     <script src="../js/play.js"></script>
     <script src="../js/language.js"></script>
