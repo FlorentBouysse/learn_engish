@@ -1,7 +1,7 @@
 // gestion de play
 
 // =====================================
-// =======  erreur possible avec const dans la function generateRandom
+// =======  error line 103, see console
 // ======= 
 // =====================================
 
@@ -74,13 +74,15 @@ const play = {
         play.createElementAnswer();
     },
 
-
+    /**
+     * Pickup array in the key of object "english"
+     * @returns array with value of key in object "english"
+     */
     searchKeyInObject: function () {
         const word = document.querySelector('h3.recovers__word').textContent;
     
         for (const key in english) {
             if (key == word) {
-             
                 const result = english[key];
                 return result;
             }
@@ -91,13 +93,23 @@ const play = {
      * Create elements html for display answer with translate, definition and example
      */
     createElementAnswer: function () {
-        let answer              = document.querySelector('h3.answer__title');
-        let answerDefinition    = document.querySelector('.answer__definition');
-        let answerExample       = document.querySelector('.answer__example');
+        const sectionToAdd = document.querySelector('section.container__answer');
+        const articleToAdd = document.createElement('div').classList.add('answer__article');
+        let answer = document.createElement('h3').classList.add('answer__title');
+        let answerDefinition = document.createElement('p').classList.add('answer__definition');
+        let answerExample = document.createElement('p').classList.add('answer__example');
         
-        answer.textContent              = Object.keys(english) + " => " + english.good[0];
-        answerDefinition.textContent    = english.good[1];
-        answerExample.textContent       = english.good[2];
+        const keyArray = play.searchKeyInObject();
+        answer.textContent              = Object.keys(english) + " => " + keyArray[0];
+        answerDefinition.textContent    = keyArray[1];
+        answerExample.textContent       = keyArray[2]; 
+
+        sectionToAdd.append(articleToAdd);
+        articleToAdd.append(answer);
+        articleToAdd.append(answerDefinition);
+        articleToAdd.append(answerExample);
+
+               
     },
 
     
