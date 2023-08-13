@@ -1,7 +1,7 @@
 // gestion de play
 
 // =====================================
-// =======  
+// =======  erreur possible avec const dans la function generateRandom
 // ======= 
 // =====================================
 
@@ -33,7 +33,8 @@ const play = {
      */
     suggestWord: function () {
         let suggestWord = document.querySelector('.recovers__word');
-        suggestWord.textContent = Object.keys(english); 
+        suggestWord.textContent = play.generateRandomWord(); 
+    
         play.validateAnswer();
         // for (const key in english) {
             
@@ -42,7 +43,9 @@ const play = {
 
 
     generateRandomWord: function () {
-        
+        const keys      = Object.keys(english);
+        const randomKey = keys[Math.floor(Math.random()  * keys.length)];
+        return randomKey;
     },
 
     /**
@@ -97,3 +100,5 @@ const play = {
 }
 
 document.addEventListener('DOMContentLoaded', play.init);
+
+
