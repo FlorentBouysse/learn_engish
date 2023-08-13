@@ -64,14 +64,14 @@ const play = {
         
         let answerOfUser = document.querySelector('input').value;
         const keyObject = play.searchKeyInObject();
-
+        play.createElementAnswer();
         if (answerOfUser === keyObject[0]) {
             play.goodAnswer();
         } else {
             play.badAnswer();
         };
 
-        play.createElementAnswer();
+        
     },
 
     /**
@@ -93,13 +93,19 @@ const play = {
      * Create elements html for display answer with translate, definition and example
      */
     createElementAnswer: function () {
-        const sectionToAdd = document.querySelector('section.container__answer');
-        const articleToAdd = document.createElement('div').classList.add('answer__article');
-        let answer = document.createElement('h3').classList.add('answer__title');
-        let answerDefinition = document.createElement('p').classList.add('answer__definition');
-        let answerExample = document.createElement('p').classList.add('answer__example');
+        const sectionToAdd = document.querySelector('.container__answer');
+        const articleToAdd = document.createElement('div');
+        articleToAdd.classList.add('answer__article');
+        let answer = document.createElement('h3');
+        answer.classList.add('answer__title');
+        let answerDefinition = document.createElement('p');
+        answerDefinition.classList.add('answer__definition');
+        let answerExample = document.createElement('p');
+        answerExample.classList.add('answer__example');
         
         const keyArray = play.searchKeyInObject();
+        console.log(keyArray);
+
         answer.textContent              = Object.keys(english) + " => " + keyArray[0];
         answerDefinition.textContent    = keyArray[1];
         answerExample.textContent       = keyArray[2]; 
@@ -108,8 +114,6 @@ const play = {
         articleToAdd.append(answer);
         articleToAdd.append(answerDefinition);
         articleToAdd.append(answerExample);
-
-               
     },
 
     
