@@ -3,7 +3,7 @@
 
 ## Outils
 
-- Tailwind
+- CSS
 - PHP
 - JavaScript
 

@@ -1,8 +1,8 @@
 // gestion de play
 
 // =====================================
-// =======  
-// ======= 
+// ======= - Vider l'input une fois validé
+// ======= - intégrer un bouton pour reset
 // =====================================
 
 const play = {
