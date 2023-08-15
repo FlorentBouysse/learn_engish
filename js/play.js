@@ -1,7 +1,7 @@
 // gestion de play
 
 // =====================================
-// =======  error line 103, see console
+// =======  
 // ======= 
 // =====================================
 
@@ -9,6 +9,7 @@ const play = {
     
     init: function () {
         play.addClickEvent();
+        
     },
 
     /**
@@ -67,10 +68,12 @@ const play = {
         play.createElementAnswer();
         if (answerOfUser === keyObject[0]) {
             play.goodAnswer();
+            play.suggestWord();
         } else {
             play.badAnswer();
+            play.suggestWord();
         };
-
+        
         
     },
 
@@ -79,8 +82,7 @@ const play = {
      * @returns array with value of key in object "english"
      */
     searchKeyInObject: function () {
-        const word = document.querySelector('h3.recovers__word').textContent;
-    
+        const word = document.querySelector('.recovers__word').textContent;
         for (const key in english) {
             if (key == word) {
                 const result = english[key];
@@ -93,39 +95,49 @@ const play = {
      * Create elements html for display answer with translate, definition and example
      */
     createElementAnswer: function () {
-        const sectionToAdd = document.querySelector('.container__answer');
-        const articleToAdd = document.createElement('div');
-        articleToAdd.classList.add('answer__article');
-        let answer = document.createElement('h3');
-        answer.classList.add('answer__title');
-        let answerDefinition = document.createElement('p');
-        answerDefinition.classList.add('answer__definition');
-        let answerExample = document.createElement('p');
-        answerExample.classList.add('answer__example');
+        const sectionToAdd  = document.querySelector('.container__answer');
+        const articleToAdd  = document.createElement('div');
+        let wordSuggest     = document.querySelector('.recovers__word').textContent;
+
+        let answer              = document.createElement('h3');
+        let answerConjugate     = document.createElement('p');
+        let answerDefinition    = document.createElement('p');
+        let answerExample       = document.createElement('p');
+        let answerExample1      = document.createElement('p');
         
+        articleToAdd.classList.add('answer__article');
+        answer.classList.add('answer__title');
+        answerConjugate.classList.add('answer__conjugate');
+        answerDefinition.classList.add('answer__definition');
+        answerExample.classList.add('answer__example');
+        answerExample1.classList.add('answer__example');
+
         const keyArray = play.searchKeyInObject();
-        console.log(keyArray);
 
-        answer.textContent              = Object.keys(english)[0] + " => " + keyArray[0];
-        answerDefinition.textContent    = keyArray[1];
-        answerExample.textContent       = keyArray[2]; 
+        answer.textContent              = "To " + wordSuggest + " => " + keyArray[0];
+        answerDefinition.textContent    = "Def : " + keyArray[1];
+        answerConjugate.textContent    = "Preterit : " + keyArray[2];
+        answerExample.textContent       = "Example : " + keyArray[3];
+        answerExample1.textContent       = "Example : " + keyArray[4]; 
 
-        sectionToAdd.append(articleToAdd);
+        sectionToAdd.prepend(articleToAdd);
         articleToAdd.append(answer);
+        articleToAdd.append(answerConjugate);
         articleToAdd.append(answerDefinition);
         articleToAdd.append(answerExample);
+        articleToAdd.append(answerExample1);
     },
 
     
     goodAnswer: function () {
-        let answer = document.querySelector('.answer__article');
-        answer.style.backgroundColor = 'green';
+        let answer = document.querySelector('.answer__title');
+        answer.style.backgroundColor = '#86B500';
     },
 
 
     badAnswer: function () {
-        let answer = document.querySelector('.answer__article');
-        answer.style.backgroundColor = 'red';
+        let answer = document.querySelector('.answer__title');
+        answer.style.backgroundColor = '#FD812D';
     }
 }
 

@@ -14,7 +14,7 @@
             <h2>Guess the word or the sentence</h2>
             <button class="play">Play / Commencer</button>
             <div class="display" style="display:none" >
-                <h3 class="recovers__word"></h3>
+                <h3>To <span class="recovers__word"></span></h3>
                 <form>
                    <input type="text" name="answer">
                     <button class="btn__validate">Validate</button> 
