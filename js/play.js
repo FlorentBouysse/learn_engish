@@ -3,6 +3,7 @@
 // =====================================
 // ======= - Vider l'input une fois validé
 // ======= - intégrer un bouton pour reset
+// ======= - si l'input est vide, empêcher la validation
 // =====================================
 
 const play = {

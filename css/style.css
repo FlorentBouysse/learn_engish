@@ -1,7 +1,7 @@
 
 
 body {
-    background-color: #E0E0C6;
+    background-color: #9b9b8c;
 }
 
 .wrapper {
@@ -48,7 +48,13 @@ nav a:hover {
 
 
 /* ============================== Main */
-
+main {
+    width: 75%;
+    min-height: 80vh;
+    background-color: #E0E0C6;
+    margin: auto;
+    padding: 100px 1rem;
+}
 
 
 /* ============================== Footer */
