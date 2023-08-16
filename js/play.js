@@ -100,6 +100,7 @@ const play = {
      * Create elements html for display answer with translate, definition and example
      */
     createElementAnswer: function () {
+        const answerUser    = document.querySelector('input').value;
         const sectionToAdd  = document.querySelector('.container__answer');
         const articleToAdd  = document.createElement('div');
         let wordSuggest     = document.querySelector('.recovers__word').textContent;
@@ -110,9 +111,10 @@ const play = {
         let answerExample       = document.createElement('p');
         let answerExample1      = document.createElement('p');
         let spanPreterit        = document.createElement('span');
-        let spanDefinition        = document.createElement('span');
-        let spanExample        = document.createElement('span');
+        let spanDefinition      = document.createElement('span');
+        let spanExample         = document.createElement('span');
         let spanExample1        = document.createElement('span');
+        let answerUserElement   = document.createElement('span');
         
         articleToAdd.classList.add('answer__article');
         answer.classList.add('answer__title');
@@ -124,9 +126,10 @@ const play = {
         spanDefinition.classList.add('bold');
         spanExample.classList.add('bold');
         spanExample1.classList.add('bold');
+        answerUserElement.classList.add('bold');
 
         const keyArray = play.searchKeyInObject();
-
+        answerUserElement               = " / Your response : " + answerUser;
         spanPreterit.textContent        = "Preterit : ";
         spanDefinition.textContent      = "Definition : ";
         spanExample.textContent         = "I/ Example : ";
@@ -147,6 +150,7 @@ const play = {
         answerDefinition.prepend(spanDefinition);
         answerExample.prepend(spanExample);
         answerExample1.prepend(spanExample1);
+        answer.append(answerUserElement);
     },
 
     

@@ -17,7 +17,7 @@
             </nav>
         </header>
         <main>
-            <h2>Guess the word or the sentence</h2>
+            <h2>Guess the word</h2>
             <button class="play">Play / Commencer</button>
             <div class="display" style="display:none" >
                 <h3>To <span class="recovers__word"></span></h3>
