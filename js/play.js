@@ -26,7 +26,9 @@ const play = {
      */
     startGame: function () {
         const display = document.querySelector('.display');
-        display.style.display = 'block';
+        const btnPlay = document.querySelector('button.play');
+        display.style.display = 'flex';
+        btnPlay.style.display = 'none';
         play.suggestWord();
     },
 
@@ -70,9 +72,11 @@ const play = {
         if (answerOfUser === keyObject[0]) {
             play.goodAnswer();
             play.suggestWord();
+            document.querySelector('input').value = "";
         } else {
             play.badAnswer();
             play.suggestWord();
+            document.querySelector('input').value = "";
         };
         
         
@@ -101,32 +105,48 @@ const play = {
         let wordSuggest     = document.querySelector('.recovers__word').textContent;
 
         let answer              = document.createElement('h3');
-        let answerConjugate     = document.createElement('p');
+        let answerPreterit      = document.createElement('p');
         let answerDefinition    = document.createElement('p');
         let answerExample       = document.createElement('p');
         let answerExample1      = document.createElement('p');
+        let spanPreterit        = document.createElement('span');
+        let spanDefinition        = document.createElement('span');
+        let spanExample        = document.createElement('span');
+        let spanExample1        = document.createElement('span');
         
         articleToAdd.classList.add('answer__article');
         answer.classList.add('answer__title');
-        answerConjugate.classList.add('answer__conjugate');
+        answerPreterit.classList.add('answer__preterit');
         answerDefinition.classList.add('answer__definition');
         answerExample.classList.add('answer__example');
         answerExample1.classList.add('answer__example');
+        spanPreterit.classList.add('bold');
+        spanDefinition.classList.add('bold');
+        spanExample.classList.add('bold');
+        spanExample1.classList.add('bold');
 
         const keyArray = play.searchKeyInObject();
 
+        spanPreterit.textContent        = "Preterit : ";
+        spanDefinition.textContent      = "Definition : ";
+        spanExample.textContent         = "I/ Example : ";
+        spanExample1.textContent        = "II/ Example : ";
         answer.textContent              = "To " + wordSuggest + " => " + keyArray[0];
-        answerDefinition.textContent    = "Def : " + keyArray[1];
-        answerConjugate.textContent    = "Preterit : " + keyArray[2];
-        answerExample.textContent       = "Example : " + keyArray[3];
-        answerExample1.textContent       = "Example : " + keyArray[4]; 
+        answerDefinition.textContent    = keyArray[1];
+        answerPreterit.textContent     = keyArray[2];
+        answerExample.textContent       = keyArray[3];
+        answerExample1.textContent      = keyArray[4]; 
 
         sectionToAdd.prepend(articleToAdd);
         articleToAdd.append(answer);
-        articleToAdd.append(answerConjugate);
+        articleToAdd.append(answerPreterit);
         articleToAdd.append(answerDefinition);
         articleToAdd.append(answerExample);
         articleToAdd.append(answerExample1);
+        answerPreterit.prepend(spanPreterit);
+        answerDefinition.prepend(spanDefinition);
+        answerExample.prepend(spanExample);
+        answerExample1.prepend(spanExample1);
     },
 
     
