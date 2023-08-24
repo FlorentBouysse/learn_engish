@@ -54,3 +54,10 @@ const english = {
     "John hasn't phoned",
     "Has she been invited?"],
 };
+
+const wordEnglish = {
+    below: ["avoir",
+    "in a lower position (than), under",
+    "The author's name was printed below the title",
+    "The sun glowed red as it sank slowly below the horizon"],
+}
