@@ -1,0 +1,39 @@
+
+.form__admin {
+    width: 75%;
+    margin: 10vh auto;
+}
+
+.form__div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__partI,
+.form__partII {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+}
+
+.label__admin {
+    padding: 1rem 0 .5rem;
+}
+ 
+.input__admin {
+    margin-left: 0;
+ }
+
+.form__admin--btn {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+}
+

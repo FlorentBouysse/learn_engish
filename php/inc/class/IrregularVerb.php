@@ -1,15 +1,15 @@
 <?php
 
-class WordEnglish
+class IrregularVerb
 {
-    public string $guessWord;
+    public string $verb;
     public string $translation;
     public string $definition;
     public string $example;
 
-    public function __construct($p_guessWord, $p_translation, $p_definition, $p_example)
+    public function __construct($p_verb, $p_translation, $p_definition, $p_example)
     {
-        $this->guessWord = $p_guessWord;
+        $this->verb = $p_verb;
         $this->translation = $p_translation;
         $this->definition = $p_definition;
         $this->example[] = $p_example;
