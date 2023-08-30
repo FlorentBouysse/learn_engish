@@ -1,4 +1,10 @@
 <h2>Admin</h2>
+<div id="select__form">
+    <button id="verb">Add verb</button>
+    <button id="word">Add word</button>
+    <button id="sentence">Add sentence</button>
+</div>
+
 <div class="form__admin" id="form__verb">
     <form action="" method="post">
         <div class="form__div">
@@ -38,7 +44,7 @@
     </form>
 </div>
 
-<div class="form__admin">
+<div class="form__admin" id="form__word">
     <form action="" method="post">
         <div class="form__div">
             <div class="form__partI">
@@ -74,7 +80,7 @@
     </form>
 </div>
 
-<div class="form__admin">
+<div class="form__admin" id="form__sentence">
     <form action="" method="post">
         <div class="form__div">
             <div class="form__partI">

@@ -2,6 +2,7 @@
 .form__admin {
     width: 75%;
     margin: 10vh auto;
+    display: none;
 }
 
 .form__div{
@@ -36,4 +37,6 @@
     margin-top: 1rem;
     padding: 1rem 2rem;
 }
+
+
 
