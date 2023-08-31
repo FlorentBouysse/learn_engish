@@ -7,5 +7,6 @@
 
     <script src="../js/play.js"></script>
     <script src="../js/language.js"></script>
+    <script src="../js/addData.js"></script>
 </body>
 </html>

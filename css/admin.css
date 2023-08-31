@@ -5,6 +5,11 @@
     display: none;
 }
 
+/* Cette classe sera appelé au click pour afficher form__admin via js*/
+.open {
+    display: block;
+}
+
 .form__div{
     display: flex;
     justify-content: space-between;
