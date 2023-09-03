@@ -148,6 +148,7 @@ form input {
     color: #1D2C46;
     text-decoration: none;
     padding: .5rem;
+    transition: all .5s;
 }
 
 .home__nav--ul li a:hover {
