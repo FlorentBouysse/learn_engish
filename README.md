@@ -17,5 +17,5 @@ Si la réponse n'est pas bonne, on incrémentera un compteur de mauvaise répons
 
 ## A faire
 
-- HTML
-- Style
+- Routing
+- MVC
